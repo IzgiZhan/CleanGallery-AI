@@ -17,7 +17,8 @@ async function send() {
     let form = new FormData();
     form.append("file", file);
 
-    let res = await fetch("http://127.0.0.1:8000/analyze", {
+    // Используем относительный путь "/analyze" вместо localhost
+    let res = await fetch("/analyze", {
         method: "POST",
         body: form
     });
